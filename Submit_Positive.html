@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submit_Form</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style-positive.css')}}">
+		<style type="text/css">
+		.main{
+			margin-top: 20%;
+			margin-left: 40%;
+			font-size: 50px;
+			color: white;
+		}
+	</style>
+</head>
+<body >
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+    		<script>
+    			var messages = {{ messages | safe }};
+    			for (var i=0; i<messages.length; i++) {
+        			alert(messages[i]);
+      			}
+    		</script>
+		{% endif %}
+	{% endwith %}
+	
+	
+	<div class="main"> 
+		{{ data }}
+	 </div>
+		
+	
+</body>
+</html>
